@@ -7,7 +7,7 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
+# Configure border style <normal|1pixel|pixel xx|none|pixel>r
 default_border pixel 1
 default_floating_border normal
 
@@ -143,7 +143,7 @@ bindsym $mod+Ctrl+Left workspace prev
 #                 set $ws2 2:
 set $ws1 "1: Terminals 1"
 set $ws2 "2: Firefox 2"
-set $ws3 "3: Firefox2 3"
+set $ws3 "3: Remmina 3"
 set $ws4 "4: File Manager 4"
 set $ws5 "5: OneNote 5"
 set $ws6 "6: VirtualBox 6"
@@ -429,18 +429,24 @@ mode "$mode_gaps_outer" {
 
 
 
-#assing [class="^firefox$"] → $ws2
-#assing [class="p3x-onenote"] $ws5
+
 assign [class="URxvt"] $ws1
 assign [class="Firefox"] $ws2
+assign [class="org.remmina.Remmina"] $ws3
 
 assign [class="dolphin"] $ws4
 assign [class="p3x-onenote"] $ws5
+assign [class="VirtualBox Manager"] $ws6
 
-exec URxvt
+
+
+exec urxvt
+exec urxvt
 exec firefox
+exec remmina
+exec dolphin
 exec p3x-onenote
-
+exec virtualbox
 
 
 # https://www.youtube.com/watch?v=ARKIwOlazKI&list=PL5ze0DjYv5DbCv9vNEzFmP6sU7ZmkGzcf&index=4&t=280s
